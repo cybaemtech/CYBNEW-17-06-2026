@@ -1,11 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   Shield, Lightbulb, HeartHandshake, Users, Clock, BarChart3,
   Globe, Award, ArrowRight, ArrowUpRight, Mail,
   Heart, Briefcase, GraduationCap, Gamepad2, Plane,
   Laptop, Calendar, PartyPopper, Home,
-  Sparkles, MessageSquare, BookOpen, UserCheck, Star, Scale
+  Sparkles, MessageSquare, BookOpen, UserCheck, Star, Scale,
+  ChevronLeft, ChevronRight
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -228,15 +229,41 @@ const PartnerSection = () => {
 
 /* ──────────────────── TEAM CULTURE & CELEBRATIONS ──────────────────── */
 const celebrations = [
-  { icon: PartyPopper, title: "Team Outing", image: "/images/about-team-1.avif", alt: "Team outing and bonding activity" },
-  { icon: PartyPopper, title: "Independence Day Celebration", image: "/images/about-team-2.avif", alt: "Independence Day celebration" },
-  { icon: PartyPopper, title: "Annual Function", image: "/images/about-team-3.avif", alt: "Annual company function" },
-  { icon: PartyPopper, title: "Diwali Celebration", image: "/images/about-team-4.avif", alt: "Diwali festival celebration" },
+  { title: "Our Team", image: "/lifeatcybaemtech/Team.jpg", alt: "Cybaem Tech team group photo" },
+  { title: "Team Lunch", image: "/lifeatcybaemtech/TeamLunch.jpeg", alt: "Team lunch outing" },
+  { title: "Foundation Day", image: "/lifeatcybaemtech/Foundationday.JPG", alt: "Company foundation day celebration" },
+  { title: "Foundation Day 2026", image: "/lifeatcybaemtech/Foundationday2026.jpg", alt: "Foundation day 2026 celebration" },
+  { title: "Celebration at Point", image: "/lifeatcybaemtech/celebrationatpoint.jpg", alt: "Team celebration at point" },
+  { title: "Independence Day", image: "/lifeatcybaemtech/indipendencedaycelebartion.jfif", alt: "Independence Day celebration" },
+  { title: "Republic Day", image: "/lifeatcybaemtech/RepublicDaycelebration.jfif", alt: "Republic Day celebration" },
+  { title: "Diwali Celebration", image: "/lifeatcybaemtech/DiwaliCelebration.jfif", alt: "Diwali festival celebration" },
+  { title: "Shiv Jayanti", image: "/lifeatcybaemtech/shivJayanticelebration.jfif", alt: "Shiv Jayanti celebration" },
+  { title: "Women's Day", image: "/lifeatcybaemtech/Womensdaycelebration.jpeg", alt: "Women's Day celebration" },
 ];
+
+const VISIBLE = 4;
 
 const CultureCelebrationsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [current, setCurrent] = useState(0);
+  const total = celebrations.length;
+
+  const prev = useCallback(() => setCurrent((c) => (c - 1 + total) % total), [total]);
+  const next = useCallback(() => setCurrent((c) => (c + 1) % total), [total]);
+
+  useEffect(() => {
+    const timer = setInterval(next, 3500);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  const getVisible = () => {
+    const items = [];
+    for (let i = 0; i < VISIBLE; i++) {
+      items.push(celebrations[(current + i) % total]);
+    }
+    return items;
+  };
 
   return (
     <section ref={ref} className="py-24 lg:py-32 section-border">
@@ -258,32 +285,64 @@ const CultureCelebrationsSection = () => {
             </motion.p>
           </div>
 
-          <motion.div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {celebrations.map((c, i) => (
-              <motion.div
-                key={`${c.title}-${i}`}
-                variants={itemVariants}
-                className="glass-panel rounded-xl overflow-hidden group hover:-translate-y-1 transition-transform duration-300 cursor-pointer"
-              >
-                <div className="relative w-full h-40 overflow-hidden bg-muted">
-                  <img
-                    src={c.image}
-                    alt={c.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    width={200}
-                    height={160}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                </div>
-                <div className="p-4 text-center">
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2 group-hover:bg-primary/20 transition-colors">
-                    <c.icon size={18} className="text-primary" />
+          <motion.div variants={itemVariants} className="relative">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {getVisible().map((c, i) => (
+                <motion.div
+                  key={`${current}-${i}`}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.35, delay: i * 0.06 }}
+                  className="glass-panel rounded-xl overflow-hidden group hover:-translate-y-1 transition-transform duration-300 cursor-pointer"
+                >
+                  <div className="w-full h-44 overflow-hidden bg-muted">
+                    <img
+                      src={c.image}
+                      alt={c.alt}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      width={400}
+                      height={176}
+                    />
                   </div>
-                  <p className="text-sm font-semibold text-foreground">{c.title}</p>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="p-4 text-center">
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2 group-hover:bg-primary/20 transition-colors">
+                      <PartyPopper size={16} className="text-primary" />
+                    </div>
+                    <p className="text-sm font-semibold text-foreground">{c.title}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <button
+                onClick={prev}
+                className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+                aria-label="Previous"
+              >
+                <ChevronLeft size={16} />
+              </button>
+
+              <div className="flex gap-2">
+                {celebrations.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(i)}
+                    className={`h-2 rounded-full transition-all duration-300 ${i === current ? "bg-primary w-5" : "bg-border w-2"}`}
+                    aria-label={`Go to slide ${i + 1}`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={next}
+                className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+                aria-label="Next"
+              >
+                <ChevronRight size={16} />
+              </button>
+            </div>
           </motion.div>
         </motion.div>
       </div>

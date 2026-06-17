@@ -36,35 +36,13 @@ const AboutHero = () => {
   return (
     <section ref={ref} className="relative pt-32 pb-0 overflow-hidden" style={{ backgroundColor: "hsl(var(--primary))" }}>
       <div className="container mx-auto px-6 lg:px-12">
-        {/* 4-image grid */}
+        {/* Centered text — now on top */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 gap-4 lg:gap-6 mb-0"
-        >
-          <motion.div variants={itemVariants} style={{ y: y1 }} className="rounded-2xl overflow-hidden aspect-[4/3]">
-            <img src="/images/about-team-1.avif" alt="Team collaborating at Cybaem Tech" className="w-full h-full object-cover" loading="eager" width={640} height={480} />
-          </motion.div>
-          <motion.div variants={itemVariants} style={{ y: y2 }} className="rounded-2xl overflow-hidden aspect-[4/3]">
-            <img src="/images/about-code.avif" alt="Enterprise code development" className="w-full h-full object-cover" loading="eager" width={640} height={480} />
-          </motion.div>
-          <motion.div variants={itemVariants} style={{ y: y2 }} className="rounded-2xl overflow-hidden aspect-[4/3]">
-            <img src="/images/about-team-2.avif" alt="Technology solutions demonstration" className="w-full h-full object-cover" loading="lazy" width={640} height={480} />
-          </motion.div>
-          <motion.div variants={itemVariants} style={{ y: y1 }} className="rounded-2xl overflow-hidden aspect-[4/3]">
-            <img src="/images/about-datacenter.avif" alt="Secure data center infrastructure" className="w-full h-full object-cover" loading="lazy" width={640} height={480} />
-          </motion.div>
-        </motion.div>
-
-        {/* Centered text overlay */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="text-center py-20 lg:py-28 relative z-10 -mt-16"
+          className="text-center pt-8 pb-20 lg:pb-28 relative z-10"
         >
           <motion.span variants={itemVariants} className="inline-block text-xs font-medium tracking-[0.2em] uppercase text-primary-foreground/60 mb-4">
             Leading Technology Solutions Provider
@@ -84,6 +62,28 @@ const AboutHero = () => {
             >
               Learn More About Our Solutions <ArrowRight size={14} />
             </Link>
+          </motion.div>
+        </motion.div>
+
+        {/* 4-image grid — now below */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-2 gap-4 lg:gap-6"
+        >
+          <motion.div variants={itemVariants} style={{ y: y1 }} className="rounded-2xl overflow-hidden aspect-[4/3]">
+            <img src="/images/about-team-1.avif" alt="Team collaborating at Cybaem Tech" className="w-full h-full object-cover" loading="eager" width={640} height={480} />
+          </motion.div>
+          <motion.div variants={itemVariants} style={{ y: y2 }} className="rounded-2xl overflow-hidden aspect-[4/3]">
+            <img src="/images/about-code.avif" alt="Enterprise code development" className="w-full h-full object-cover" loading="eager" width={640} height={480} />
+          </motion.div>
+          <motion.div variants={itemVariants} style={{ y: y2 }} className="rounded-2xl overflow-hidden aspect-[4/3]">
+            <img src="/images/about-team-2.avif" alt="Technology solutions demonstration" className="w-full h-full object-cover" loading="lazy" width={640} height={480} />
+          </motion.div>
+          <motion.div variants={itemVariants} style={{ y: y1 }} className="rounded-2xl overflow-hidden aspect-[4/3]">
+            <img src="/images/about-datacenter.avif" alt="Secure data center infrastructure" className="w-full h-full object-cover" loading="lazy" width={640} height={480} />
           </motion.div>
         </motion.div>
       </div>
