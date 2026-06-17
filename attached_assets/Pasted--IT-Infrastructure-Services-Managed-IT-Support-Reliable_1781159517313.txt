@@ -1,0 +1,167 @@
+
+IT Infrastructure Services & Managed IT Support
+Reliable, Secure & Scalable IT Infrastructure Management for Modern Businesses
+At Cybaem Tech, we deliver end-to-end IT Infrastructure Services that help organizations build, manage, secure, and optimize their entire technology environment. As a trusted Managed Service Provider (MSP), we take complete ownership of your IT — so your team can focus on growing the business while we ensure maximum uptime, airtight security, and seamless day-to-day operations.
+From daily IT support and Annual Maintenance Contracts (AMC) to cybersecurity, Microsoft 365 administration, cloud infrastructure, network management, and backup & disaster recovery — Cybaem Tech is your single point of contact for everything IT.
+Whether you are a startup, SME, large enterprise, educational institution, healthcare provider, manufacturing company, real estate firm, or financial organization, our certified experts design and deliver IT solutions tailored precisely to your business requirements and budget.
+📞 Ready to transform your IT? Get a Free IT Infrastructure Assessment → [CTA Button]
+
+Why Businesses Trust Cybaem Tech — At a Glance
+Highlight	What It Means for You
+24x7 Monitoring & Support	Round-the-clock infrastructure monitoring with rapid remote and onsite response — issues are resolved before they impact your business.
+Certified IT Professionals	Engineers certified across Microsoft, Fortinet, Sophos, Cisco, VMware, and cloud platforms.
+Single Point of Contact	One partner for hardware, software, network, cloud, security, and vendor coordination — no finger-pointing between vendors.
+Predictable Costs	Fixed monthly pricing and flexible AMC plans replace unpredictable break-fix expenses.
+Proactive, Not Reactive	Preventive maintenance, patching, and health checks that reduce downtime by design.
+Scalable Engagement Models	Fully managed, co-managed, or project-based — we adapt to your in-house IT maturity.
+
+Our IT Infrastructure Services
+A complete portfolio of managed IT services organized into six service groups — covering every layer of your technology stack: support, security, cloud, network, devices, and strategy.
+Service Group	What It Covers
+1. Managed IT & Support	Managed IT Services • IT Support (L1/L2/L3) • AMC Services • Helpdesk & ITSM
+2. Cybersecurity & Data Protection	Cybersecurity • Firewall Management • Antivirus & Endpoint • Backup & DR • Patch Management
+3. Cloud, Server & Productivity	Microsoft 365 & Email • Cloud Infrastructure • Server Management • Virtualization
+4. Network & Connectivity	Network Infrastructure • 24x7 Infrastructure Monitoring
+5. Device, Asset & Procurement	Device Lifecycle • IT Asset Management • IT Procurement • Vendor & ISP Management
+6. IT Consulting & Strategy	IT Consulting • Digital Transformation • IT Roadmap & Audits
+Web team tip: Use this table as the basis for the services mega-menu / anchor-link navigation. Each group heading below should be an anchor target (#managed-it, #cybersecurity, #cloud, #network, #devices, #consulting).
+1. Managed IT & Support Services
+Your complete outsourced IT department — proactive management, responsive support, and structured service delivery under one predictable contract.
+1.1 Managed IT Services
+Our flagship Managed IT Services give you a dedicated IT team that proactively monitors, maintains, and supports your complete IT environment. We become an extension of your business — handling everything from the helpdesk to infrastructure strategy.
+What's included: End-to-end infrastructure management, dedicated support team, remote & onsite support, user and IT asset management, 24x7 monitoring, vendor coordination, IT documentation, preventive maintenance, and performance optimization.
+Business outcomes: Up to 30–40% reduction in IT operating costs, improved productivity, enterprise-grade security, faster resolution times, and guaranteed business continuity.
+1.2 IT Support Services (L1 / L2 / L3)
+Fast, friendly, and effective technical support for every user and every device. Our multi-tier model ensures the right expert handles every issue — from a password reset to a server outage.
+•	Coverage: Desktop, laptop, server, printer, network, VPN, email, Microsoft 365, and application support — remote and onsite
+•	Level 1 — Basic user support and quick fixes
+•	Level 2 — Advanced technical troubleshooting
+•	Level 3 — Infrastructure, server, and specialist escalations
+1.3 Annual Maintenance Contract (AMC) Services
+Keep your IT infrastructure healthy, optimized, and reliable throughout the year. Our flexible AMC plans cover preventive maintenance, scheduled health checks, and priority support — so small issues never become expensive failures.
+AMC coverage: Desktop, Laptop, Server, Network, Firewall, and Storage AMC — including hardware health checks, software maintenance, security updates, and performance tuning.
+AMC benefits: Priority response, reduced downtime, scheduled preventive visits, lower repair costs, and better system performance.
+1.4 Helpdesk & ITSM Services
+A professional, process-driven IT helpdesk built on ITSM best practices — every incident logged, tracked, prioritized, and resolved within agreed SLAs.
+Key features: Ticket & incident management, service request handling, SLA management with escalation matrix, knowledge base, asset tracking, self-service user portal, and monthly performance reporting.
+
+2. Cybersecurity & Data Protection
+Layered defense for your perimeter, endpoints, email, and data — plus guaranteed recoverability when the unexpected happens.
+2.1 Cybersecurity Services
+Cyber threats evolve daily — your defenses should too. Our layered cybersecurity services protect your endpoints, email, users, and data against ransomware, phishing, and advanced attacks.
+Services: Endpoint security, EDR/MDR deployment, ransomware protection, email security, security audits, vulnerability & risk assessments, security awareness training, compliance support, and Zero Trust implementation.
+2.2 Firewall & Network Security Management
+Protect your business perimeter with enterprise-grade firewall management. We install, configure, optimize, and continuously monitor firewalls to block threats before they reach your network.
+Services: Firewall installation & configuration, security policy management, VPN configuration, intrusion detection & prevention (IDS/IPS), and continuous security monitoring.
+Platforms we support: Sophos, Fortinet FortiGate, SonicWall, Cisco, Palo Alto, and WatchGuard.
+2.3 Antivirus & Endpoint Management
+Every desktop, laptop, and server is a potential entry point. We secure and manage all endpoints from a centralized console with consistent policies across your organization.
+Includes: Antivirus deployment, endpoint monitoring, malware & ransomware protection, USB device control, and application control.
+2.4 Data Backup & Disaster Recovery
+Data loss can cripple a business in hours. Our automated backup and disaster recovery solutions ensure your critical data is always protected, recoverable, and tested.
+Backup solutions: Server, cloud, Microsoft 365, database, endpoint, NAS, and hybrid backup.
+Disaster recovery: DR planning, business continuity planning (BCP), recovery testing, failover, and high-availability architectures.
+2.5 Patch Management & System Updates
+Unpatched systems are the #1 cause of breaches. We keep every system updated, secure, and compliant — automatically and without disrupting your work.
+Covers: Windows & server updates, firmware updates, security patches, application updates, vulnerability remediation, and compliance updates.
+
+3. Cloud, Server & Productivity
+Modern, scalable computing — from Microsoft 365 workplaces to Azure cloud, optimized servers, and virtualized infrastructure.
+3.1 Microsoft 365 & Email Management
+As Microsoft 365 specialists, we help organizations deploy, secure, and manage the complete M365 ecosystem — maximizing productivity while keeping data protected and compliant.
+•	Microsoft 365: Deployment, administration, migration, and user & license management
+•	Workloads: Exchange Online, Teams, SharePoint, and OneDrive administration
+•	Security: Security & compliance configuration, conditional access, and MFA rollout
+•	Email management: Business email setup, migration, anti-spam, shared mailboxes, email backup & recovery
+•	Deliverability: DKIM, SPF & DMARC configuration and mail-flow optimization for guaranteed deliverability
+3.2 Cloud Infrastructure Services
+Move to the cloud with confidence. We plan, migrate, secure, and optimize cloud environments so you get scalability without complexity or runaway costs.
+Cloud expertise: Microsoft Azure, Microsoft 365, Google Workspace, cloud migration, cloud security & monitoring, hybrid cloud, cloud backup, and cost optimization.
+3.3 Server Management Services
+Your servers are the heart of your IT — we keep them secure, optimized, and always available.
+Covers: Windows & Linux administration, Active Directory & domain controller management, file and application servers, virtual servers, patch management, security hardening, and 24x7 monitoring.
+3.4 Virtualization Services
+Consolidate hardware, cut costs, and improve agility through proven virtualization technologies.
+Includes: VMware administration, Hyper-V management, virtual server deployment, Virtual Desktop Infrastructure (VDI), and resource optimization.
+
+4. Network & Connectivity
+Fast, secure, always-on connectivity — designed, deployed, and watched around the clock.
+4.1 Network Infrastructure Services
+We design, implement, and manage fast, secure, and highly available networks — from single-office LANs to multi-branch SD-WAN deployments.
+Services: LAN/WAN implementation, structured cabling, enterprise wireless, router & switch configuration, VPN setup, bandwidth optimization, and multi-branch connectivity.
+Solutions: New office network setup, branch connectivity, secure remote-workforce access, and SD-WAN.
+4.2 24x7 Infrastructure Monitoring
+Our monitoring platform watches your infrastructure around the clock — identifying and resolving issues before they impact operations.
+We monitor: Servers, networks, storage, applications, security events, cloud workloads, backups, and overall performance.
+
+5. Device, Asset & Procurement Management
+Complete control of your hardware fleet — from sourcing and deployment to tracking, vendor coordination, and retirement.
+5.1 Desktop & Laptop Lifecycle Management
+Complete lifecycle management for every user device — from procurement to retirement.
+Includes: Procurement assistance, deployment, OS & software installation, configuration, hardware upgrades, device security, warranty management, and end-of-life disposal.
+5.2 IT Asset Management
+Know exactly what you own, where it is, and when it needs attention — with complete visibility and control over your IT assets.
+Features: Asset inventory, hardware & software tracking, license management, warranty tracking, audits, compliance reporting, and lifecycle management.
+5.3 IT Procurement & Deployment
+Get the right technology at the right price. We leverage our vendor relationships to source, configure, and deploy hardware and software at competitive rates.
+We supply & deploy: Laptops, desktops, servers, storage, firewalls, switches, routers, access points, printers, accessories, and software licenses.
+5.4 Vendor & ISP Management
+Stop chasing vendors. We coordinate with all your technology vendors and internet service providers on your behalf — one call to us handles everything.
+Includes: ISP coordination, vendor management, warranty claims, escalation handling, procurement coordination, and license renewals.
+
+6. IT Consulting & Strategy
+Senior-level technology guidance that turns your IT from a cost center into a competitive advantage.
+6.1 IT Consulting & Digital Transformation
+Strategic technology consulting that aligns IT with your business goals — assess where you are, plan where you're going, and execute with confidence.
+Services: IT infrastructure assessment, IT audits, IT roadmap planning, digital transformation, cloud strategy, cybersecurity strategy, cost optimization, and compliance readiness.
+
+Flexible Engagement Models
+Model	Best Suited For
+Fully Managed IT	Businesses without an in-house IT team — we manage everything end to end under one monthly contract.
+Co-Managed IT	Companies with internal IT staff who need specialist skills, 24x7 coverage, or extra capacity.
+AMC (Annual Contract)	Organizations that need preventive maintenance and priority support for existing infrastructure.
+Project-Based	One-time initiatives — office network setup, server deployment, cloud migration, firewall implementation, or M365 rollout.
+On-Demand Support	Per-incident remote or onsite support without a long-term commitment.
+
+How We Onboard You — Our Proven 5-Step Process
+•	Step 1: Assess — We audit your current infrastructure, identify risks, gaps, and quick wins (free for new clients).
+•	Step 2: Plan — We design a tailored service plan, SLA structure, and pricing aligned to your business needs.
+•	Step 3: Onboard — Structured onboarding: documentation, monitoring agents, security baseline, and helpdesk setup — typically within 1–2 weeks.
+•	Step 4: Manage — Proactive 24x7 monitoring, maintenance, patching, and support backed by defined SLAs.
+•	Step 5: Optimize — Quarterly reviews, performance reports, and a continuously updated IT roadmap.
+
+Industries We Serve
+We deliver industry-aware IT solutions, understanding the compliance, uptime, and security demands unique to each sector:
+Manufacturing  •  Healthcare  •  Education  •  Retail  •  Real Estate  •  Construction  •  Financial Services  •  Logistics  •  Hospitality  •  Professional Services  •  Government Organizations  •  IT Companies
+
+Why Choose Cybaem Tech as Your IT Partner?
+•	✔ Certified IT Professionals — Engineers certified across Microsoft, Fortinet, Sophos, Cisco, VMware, and major cloud platforms.
+•	✔ 24x7 Technical Support — Round-the-clock monitoring with rapid remote and onsite response.
+•	✔ Proactive Monitoring & Preventive Maintenance — We fix problems before they happen, not after they hurt.
+•	✔ Enterprise-Grade Security — Firewall, endpoint, email, and Zero Trust security built into every engagement.
+•	✔ Deep Microsoft 365 & Cloud Expertise — Microsoft 365 experts plus cloud & infrastructure specialists on one team.
+•	✔ Flexible, Cost-Effective Plans — AMC plans and managed contracts sized for startups, SMEs, and enterprises alike.
+•	✔ Fast, SLA-Backed Response — Defined SLAs with guaranteed fast response and resolution times.
+•	✔ Single Point of Contact — One partner, one contact, full accountability for all your IT needs.
+
+Frequently Asked Questions
+Tip for web team: Implement this section with FAQ schema markup (FAQPage structured data) for rich results in Google.
+Q1. What are Managed IT Services?
+Managed IT Services means outsourcing the day-to-day management of your IT infrastructure — monitoring, maintenance, support, and security — to a specialist partner like Cybaem Tech for a fixed monthly fee. You get an entire IT department's capability at a fraction of the cost of hiring in-house.
+Q2. What is included in an IT AMC?
+Our Annual Maintenance Contracts cover preventive maintenance, scheduled health checks, hardware and software maintenance, security updates, performance tuning, and priority support for desktops, laptops, servers, networks, firewalls, and storage systems.
+Q3. Do you provide both remote and onsite support?
+Yes. Most issues are resolved instantly through secure remote support, and our engineers provide onsite assistance whenever physical intervention is needed.
+Q4. Can you work alongside our existing IT team?
+Absolutely. Our Co-Managed IT model is designed exactly for this — we supplement your internal team with 24x7 monitoring, specialist skills (security, cloud, networking), and extra capacity during peak demand.
+Q5. How quickly do you respond to issues?
+Response times are defined in your SLA based on issue priority. Critical incidents receive immediate attention with continuous escalation until resolved. Typical response for critical issues is within 15–30 minutes.
+Q6. Which locations do you serve?
+We are headquartered in Pune (Hinjawadi) and serve clients across India, with remote-first support that extends to international clients as well.
+Q7. How much do Managed IT Services cost?
+Pricing depends on the number of users, devices, servers, and the service level you need. We offer per-user and per-device monthly pricing models. Contact us for a free assessment and a customized quote — most clients save 30–40% compared to in-house IT costs.
+
+Transform Your IT Infrastructure with Cybaem Tech
+Cybaem Tech delivers reliable, secure, and scalable IT Infrastructure Services that empower businesses to operate efficiently and grow confidently. Whether you need fully managed IT services, an IT AMC, Microsoft 365 administration, cybersecurity, cloud solutions, backup management, or network infrastructure support — our team is ready.
+📞 Get Your Free IT Infrastructure Assessment Today
+[Button: Request Free Assessment]   [Button: Call Us Now]   [Button: WhatsApp Us]

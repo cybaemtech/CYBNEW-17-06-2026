@@ -1,0 +1,174 @@
+/* Fonts loaded via <link> in index.html for non-render-blocking delivery */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 20% 10%;
+
+    --card: 210 20% 97%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 207 60% 31%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 15% 93%;
+    --secondary-foreground: 220 20% 10%;
+
+    --muted: 210 15% 95%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 207 60% 31%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 207 60% 31%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 210 20% 97%;
+    --sidebar-foreground: 220 20% 10%;
+    --sidebar-primary: 207 60% 31%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 93%;
+    --sidebar-accent-foreground: 220 20% 10%;
+    --sidebar-border: 215 20% 88%;
+    --sidebar-ring: 207 60% 31%;
+
+    /* Custom tokens */
+    --glass: 215 20% 50% / 0.05;
+    --glass-border: 215 20% 50% / 0.12;
+    --glow: 207 60% 31%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-card border border-border backdrop-blur-sm;
+  }
+
+  .glass-nav {
+    @apply backdrop-blur-xl bg-background/90 border-b border-border;
+  }
+
+  .section-border {
+    @apply border-b border-border;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent;
+  }
+
+  .glow-accent {
+    text-shadow: 0 0 40px hsl(207 60% 31% / 0.2);
+  }
+
+  .hover-underline {
+    @apply relative inline-block;
+  }
+
+  .hover-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px bg-foreground origin-bottom-left transition-transform duration-300 scale-x-0;
+  }
+
+  .hover-underline:hover::after,
+  .hover-underline.active::after {
+    @apply scale-x-100 origin-bottom-left;
+  }
+
+  .hover-underline.active {
+    @apply text-foreground;
+  }
+
+  .marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .marquee-reverse {
+    animation: marquee-reverse 30s linear infinite;
+  }
+
+  /* Legal pages light theme overrides */
+  .legal-light-theme .text-white {
+    color: hsl(var(--foreground));
+  }
+  .legal-light-theme .text-gray-300 {
+    color: hsl(var(--muted-foreground));
+  }
+  .legal-light-theme .text-gray-400 {
+    color: hsl(var(--muted-foreground));
+  }
+  .legal-light-theme .bg-gray-900\/50 {
+    background-color: hsl(var(--card));
+  }
+  .legal-light-theme .bg-gray-800\/50 {
+    background-color: hsl(var(--muted));
+  }
+  .legal-light-theme .bg-gray-800 {
+    background-color: hsl(var(--muted));
+  }
+  .legal-light-theme .border-gray-700 {
+    border-color: hsl(var(--border));
+  }
+  .legal-light-theme .bg-gray-700 {
+    background-color: hsl(var(--border));
+  }
+}
+
+/* Global keyframes */
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes orbit-spin-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 0.4; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
