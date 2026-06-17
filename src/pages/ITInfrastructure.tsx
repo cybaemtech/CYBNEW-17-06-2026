@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   ArrowUpRight, ArrowRight, CheckCircle2, Server, Shield, Cloud,
   Network, Monitor, Lightbulb, Phone, MessageSquare, ChevronLeft,
@@ -329,14 +329,6 @@ const WhatWeManage = () => {
 
           {/* Cards carousel */}
           <motion.div variants={fadeUp} className="relative">
-            {/* Nav arrows */}
-            <button onClick={() => scroll("left")} className="hidden sm:flex absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-background border border-border shadow-md items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all">
-              <ChevronLeft size={18} />
-            </button>
-            <button onClick={() => scroll("right")} className="hidden sm:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-background border border-border shadow-md items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all">
-              <ChevronRight size={18} />
-            </button>
-
             <div ref={scrollRef} className="flex gap-4 overflow-x-auto scrollbar-none pb-2 sm:mx-6" style={{ scrollSnapType: "x mandatory" }}>
               {serviceCards.map((card) => (
                 <a
@@ -649,28 +641,6 @@ const IndustriesFAQ = () => {
                 </Accordion>
               </motion.div>
 
-              {/* Not sure where to start card */}
-              <motion.div variants={fadeUp} className="mt-6 rounded-2xl border border-primary/20 bg-primary/5 p-6">
-                <h3 className="font-display text-base font-bold text-foreground mb-1.5">Not sure where to start?</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed mb-5">
-                  Book a free IT Infrastructure Assessment. Our engineers will audit your setup and propose a plan — at no charge.
-                </p>
-                <div className="space-y-2">
-                  <MagneticButton>
-                    <Link to="/contact" className="flex items-center justify-center gap-2 w-full px-5 py-3 text-sm font-semibold bg-primary text-primary-foreground rounded-xl hover:opacity-90 transition-opacity">
-                      Request Free Assessment <ArrowUpRight size={15} />
-                    </Link>
-                  </MagneticButton>
-                  <div className="grid grid-cols-2 gap-2">
-                    <a href="tel:+918530171515" className="flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-semibold border border-border rounded-xl text-foreground hover:bg-muted/50 transition-colors">
-                      <Phone size={13} /> Call Us Now
-                    </a>
-                    <a href="https://wa.me/918530171515" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-semibold border border-border rounded-xl text-foreground hover:bg-muted/50 transition-colors">
-                      <MessageSquare size={13} /> WhatsApp Us
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
             </div>
 
           </div>
@@ -866,7 +836,18 @@ const AnchorNav = () => {
 
 /* ════════════════ PAGE ════════════════ */
 const ITInfrastructure = () => {
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+        return;
+      }
+    }
+    window.scrollTo(0, 0);
+  }, [hash]);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />

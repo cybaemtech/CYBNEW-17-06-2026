@@ -1,6 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FileText, ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  Server,
+  Shield,
+  ShieldAlert,
+  Code2,
+  Globe,
+  Users,
+  TrendingUp,
+  BarChart2,
+  Linkedin,
+} from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import cybaemLogo from "@/assets/cybaem-logo.png";
 import MobileMenu, { AnimatedHamburger } from "./MobileMenu";
@@ -9,25 +20,70 @@ const solutionsColumns = [
   {
     label: "CLOUD & SECURITY",
     items: [
-      { title: "IT Infrastructure Services", desc: "End-to-end managed IT, AMC, network & cloud.", slug: "it-infrastructure-services" },
-      { title: "Managed IT & Security", desc: "Zero-Trust protection, 24/7 resilience.", slug: "managed-it" },
-      { title: "Threat Monitoring", desc: "Proactive defense, no downtime.", slug: "managed-it" },
+      {
+        title: "IT Infrastructure Services",
+        desc: "End-to-end managed IT, AMC, network & cloud.",
+        slug: "it-infrastructure-services",
+        icon: Server,
+      },
+      {
+        title: "Managed IT & Security",
+        desc: "Zero-Trust protection, 24/7 resilience.",
+        slug: "managed-it",
+        icon: Shield,
+      },
+      {
+        title: "Threat Monitoring",
+        desc: "Proactive defense, no downtime.",
+        slug: "managed-it",
+        icon: ShieldAlert,
+      },
     ],
   },
   {
     label: "SOFTWARE & PLATFORMS",
     items: [
-      { title: "Enterprise Software", desc: "Build Products: Break bottlenecks and scale faster.", slug: "enterprise-software" },
-      { title: "Website Designing", desc: "Web Systems: Revamp/Convert more with secure, fast platforms.", slug: "web-systems" },
-      { title: "IT Augmentation", desc: "IT Staffing: Deploy elite engineers in 48 hours.", slug: "it-staff-augmentation" },
+      {
+        title: "Enterprise Software",
+        desc: "Build Products: Break bottlenecks and scale faster.",
+        slug: "enterprise-software",
+        icon: Code2,
+      },
+      {
+        title: "Website Designing",
+        desc: "Web Systems: Revamp/Convert more with secure, fast platforms.",
+        slug: "web-systems",
+        icon: Globe,
+      },
+      {
+        title: "IT Augmentation",
+        desc: "IT Staffing: Deploy elite engineers in 48 hours.",
+        slug: "it-staff-augmentation",
+        icon: Users,
+      },
     ],
   },
   {
     label: "GROWTH & REVENUE",
     items: [
-      { title: "Digital Growth", desc: "Turn presence into B2B leads.", slug: "digital-revenue-growth" },
-      { title: "SEO & CRO", desc: "Dominate search and conversions.", slug: "digital-revenue-growth" },
-      { title: "LinkedIn Strategy", desc: "Executive thought leadership at scale.", slug: "digital-revenue-growth" },
+      {
+        title: "Digital Growth",
+        desc: "Turn presence into B2B leads.",
+        slug: "digital-revenue-growth",
+        icon: TrendingUp,
+      },
+      {
+        title: "SEO & CRO",
+        desc: "Dominate search and conversions.",
+        slug: "digital-revenue-growth",
+        icon: BarChart2,
+      },
+      {
+        title: "LinkedIn Strategy",
+        desc: "Executive thought leadership at scale.",
+        slug: "digital-revenue-growth",
+        icon: Linkedin,
+      },
     ],
   },
 ];
@@ -50,7 +106,9 @@ const Navbar = () => {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   const handleEnter = () => {
@@ -74,12 +132,20 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-500 ${scrolled ? 'border-b border-border/15' : ''}`}
+        className={`fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-500 ${scrolled ? "border-b border-border/15" : ""}`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-12">
-          <div className={`flex items-center justify-between transition-all duration-500 ${scrolled ? "py-3 sm:py-4" : "py-4 sm:py-6"}`}>
+          <div
+            className={`flex items-center justify-between transition-all duration-500 ${scrolled ? "py-3 sm:py-4" : "py-4 sm:py-6"}`}
+          >
             <Link to="/" className="flex items-center">
-              <img src={cybaemLogo} alt="Cybaem Tech" className="h-9 sm:h-11 w-auto" width={180} height={44} />
+              <img
+                src={cybaemLogo}
+                alt="Cybaem Tech"
+                className="h-9 sm:h-11 w-auto"
+                width={180}
+                height={44}
+              />
             </Link>
 
             {/* Desktop nav */}
@@ -93,16 +159,24 @@ const Navbar = () => {
                     onMouseEnter={handleEnter}
                     onMouseLeave={handleLeave}
                   >
-                    <button className={`text-sm transition-colors duration-300 hover-underline flex items-center gap-1${isSolutionsActive ? " active text-foreground" : " text-muted-foreground hover:text-foreground"}`}>
+                    <button
+                      className={`text-sm transition-colors duration-300 hover-underline flex items-center gap-1${isSolutionsActive ? " active text-foreground" : " text-muted-foreground hover:text-foreground"}`}
+                    >
                       {item.label}
                       <svg
                         width="10"
                         height="6"
                         viewBox="0 0 10 6"
                         fill="none"
-                        className={`mt-0.5 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`}
+                        className={`mt-0.5 transition-transform duration-200 ${solutionsOpen ? "rotate-180" : ""}`}
                       >
-                        <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path
+                          d="M1 1L5 5L9 1"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     </button>
 
@@ -112,43 +186,89 @@ const Navbar = () => {
                           initial={{ opacity: 0, y: 12, scale: 0.97 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 8, scale: 0.97 }}
-                          transition={{ type: "spring", stiffness: 300, damping: 26 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 26,
+                          }}
                           className="absolute top-full left-1/2 pt-4"
                           style={{ transform: "translateX(-50%)" }}
                         >
-                          <div className="bg-primary rounded-2xl shadow-2xl p-8 flex min-w-[860px]" style={{ marginLeft: "-200px" }}>
-                            <div className="flex flex-1">
+                          <div
+                            className="bg-primary rounded-2xl shadow-2xl p-6 flex min-w-[860px]"
+                            style={{ marginLeft: "-200px" }}
+                          >
+                            <div className="flex flex-1 gap-3">
                               {solutionsColumns.map((col, colIdx) => (
                                 <div
                                   key={col.label}
-                                  className="flex-1 min-w-[180px] px-5 first:pl-0 transition-colors duration-200 rounded-lg"
+                                  className="flex-1 min-w-[180px] transition-colors duration-200 rounded-xl"
                                   style={{
-                                    borderRight: colIdx === 0 ? "1px solid rgba(255,255,255,0.12)" : "none",
-                                    ...(colIdx > 0 ? { border: "0.75px solid rgba(255,255,255,0.15)", borderRadius: "12px", marginLeft: "12px", padding: "16px" } : {}),
+                                    border:
+                                      "0.75px solid rgba(255,255,255,0.15)",
+                                    borderRadius: "12px",
+                                    padding: "16px",
                                   }}
-                                  onMouseEnter={colIdx > 0 ? (e) => { e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.06)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.35)"; } : undefined}
-                                  onMouseLeave={colIdx > 0 ? (e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; } : undefined}
+                                  onMouseEnter={(e) => {
+                                    e.currentTarget.style.backgroundColor =
+                                      "rgba(255,255,255,0.06)";
+                                    e.currentTarget.style.borderColor =
+                                      "rgba(255,255,255,0.35)";
+                                  }}
+                                  onMouseLeave={(e) => {
+                                    e.currentTarget.style.backgroundColor =
+                                      "transparent";
+                                    e.currentTarget.style.borderColor =
+                                      "rgba(255,255,255,0.15)";
+                                  }}
                                 >
-                                  <span className="text-xs font-medium tracking-[0.15em] uppercase text-primary-foreground/50 mb-5 block">{col.label}</span>
+                                  <span className="text-xs font-medium tracking-[0.15em] uppercase text-primary-foreground/50 mb-5 block">
+                                    {col.label}
+                                  </span>
                                   <div>
-                                    {col.items.map((item, itemIdx) => (
-                                      <div key={item.title}>
+                                    {col.items.map((it, itemIdx) => (
+                                      <div key={it.title}>
                                         <Link
-                                          to={`/solutions/${item.slug}`}
+                                          to={`/solutions/${it.slug}`}
                                           className="group flex items-start gap-3 transition-all duration-200 py-2 px-2 -mx-2 rounded-lg"
-                                          onClick={() => setSolutionsOpen(false)}
-                                          style={{ backgroundColor: "transparent" }}
-                                          onMouseEnter={colIdx === 0 ? (e) => { e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.06)"; } : undefined}
-                                          onMouseLeave={colIdx === 0 ? (e) => { e.currentTarget.style.backgroundColor = "transparent"; } : undefined}
+                                          onClick={() =>
+                                            setSolutionsOpen(false)
+                                          }
+                                          style={{
+                                            backgroundColor: "transparent",
+                                          }}
+                                          onMouseEnter={(e) => {
+                                            e.currentTarget.style.backgroundColor =
+                                              "rgba(255,255,255,0.06)";
+                                          }}
+                                          onMouseLeave={(e) => {
+                                            e.currentTarget.style.backgroundColor =
+                                              "transparent";
+                                          }}
                                         >
-                                          <FileText size={18} className="text-primary-foreground/40 mt-0.5 shrink-0" />
+                                          <it.icon
+                                            size={17}
+                                            className="text-primary-foreground/40 mt-0.5 shrink-0"
+                                          />
                                           <div>
-                                            <span className="text-sm font-semibold text-primary-foreground block leading-tight">{item.title}</span>
-                                            <span className="text-xs text-primary-foreground/60 leading-snug block mt-0.5">{item.desc}</span>
+                                            <span className="text-sm font-semibold text-primary-foreground block leading-tight">
+                                              {it.title}
+                                            </span>
+                                            <span className="text-xs text-primary-foreground/60 leading-snug block mt-0.5">
+                                              {it.desc}
+                                            </span>
                                           </div>
                                         </Link>
-                                        {colIdx === 0 && itemIdx < col.items.length - 1 && <div className="my-2" style={{ height: "0.75px", background: "rgba(255,255,255,0.2)" }} />}
-                                        {colIdx !== 0 && itemIdx < col.items.length - 1 && <div className="my-3" />}
+                                        {itemIdx < col.items.length - 1 && (
+                                          <div
+                                            className="my-2"
+                                            style={{
+                                              height: "0.75px",
+                                              background:
+                                                "rgba(255,255,255,0.2)",
+                                            }}
+                                          />
+                                        )}
                                       </div>
                                     ))}
                                   </div>
@@ -156,17 +276,26 @@ const Navbar = () => {
                               ))}
                             </div>
 
-                            <div className="mx-4" style={{ width: "1px", background: "rgba(255,255,255,0.12)" }} />
-
                             <div
-                              className="w-[240px] bg-primary-foreground rounded-xl p-6 flex flex-col justify-between transition-transform duration-200 cursor-pointer hover:-translate-y-px"
-                            >
+                              className="ml-3"
+                              style={{
+                                width: "1px",
+                                background: "rgba(255,255,255,0.12)",
+                                flexShrink: 0,
+                              }}
+                            />
+
+                            <div className="w-[220px] ml-3 bg-primary-foreground rounded-xl p-6 flex flex-col justify-between transition-transform duration-200 cursor-pointer hover:-translate-y-px shrink-0">
                               <div>
                                 <h3 className="font-display text-xl font-bold text-foreground leading-tight mb-3">
-                                  Zero scope-creep.<br />Guaranteed delivery.
+                                  Zero scope-creep.
+                                  <br />
+                                  Guaranteed delivery.
                                 </h3>
                                 <p className="text-xs text-muted-foreground leading-relaxed">
-                                  Every project is led by a dedicated owner, strict requirement freezes, and ISO-certified security from day one.
+                                  Every project is led by a dedicated owner,
+                                  strict requirement freezes, and ISO-certified
+                                  security from day one.
                                 </p>
                               </div>
                               <a
@@ -193,7 +322,13 @@ const Navbar = () => {
                     {item.label}
                   </NavLink>
                 ) : (
-                  <a key={item.label} href={item.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 hover-underline">{item.label}</a>
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 hover-underline"
+                  >
+                    {item.label}
+                  </a>
                 ),
               )}
             </div>
@@ -209,7 +344,10 @@ const Navbar = () => {
                   Book a Review
                 </a>
               </MagneticButton>
-              <AnimatedHamburger isOpen={mobileOpen} toggle={() => setMobileOpen(!mobileOpen)} />
+              <AnimatedHamburger
+                isOpen={mobileOpen}
+                toggle={() => setMobileOpen(!mobileOpen)}
+              />
             </div>
           </div>
         </div>
