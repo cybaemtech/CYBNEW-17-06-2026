@@ -1,58 +1,32 @@
 import { organizationSchema, professionalServiceSchema, websiteSchema } from "./commonSchemas";
 
 export const homeSeoData = {
-  title: "Cybaem Tech | IT, Security & Marketing Services",
-  description: "Cybaem Tech Pvt Ltd delivers managed IT services, software development, cyber security, IT support, website development and digital marketing solutions across Pune, Mumbai, Bangalore and India.",
-  canonical: "/",
-  keywords: "IT services company Pune, managed IT services India, software development company Pune Mumbai Bangalore, IT staff augmentation, cyber security services India, remote IT support, website development company, custom website development, eCommerce development, digital marketing services, SEO company Pune, cloud computing solutions India, IT infrastructure management, manufacturing ERP, pharma compliance software",
-  ogTitle: "Cybaem Tech Pvt Ltd | IT Services & Software Company in Pune",
-  ogDescription: "Managed IT services, software development, cyber security, website development and digital marketing solutions for business growth.",
-  ogImageAlt: "Cybaem Tech Pvt Ltd logo",
-  twitterTitle: "Cybaem Tech Pvt Ltd | IT Services & Software Company in Pune",
-  twitterDescription: "Scale with managed IT, development, cyber security and digital growth solutions from Cybaem Tech.",
-  twitterImageAlt: "Cybaem Tech Pvt Ltd logo",
+  title: "Cybaem Tech | IT Services, Cybersecurity & Cloud Solutions Pune",
+  description: "Cybaem Tech provides IT services, cybersecurity, cloud solutions, managed IT support, Microsoft 365, networking, digital marketing, and infrastructure management in Pune.",
+  canonical: "https://www.cybaemtech.com/",
+  keywords: "IT Services Pune, Cybersecurity Services Pune, Cloud Solutions Pune, Managed IT Services, Microsoft 365 Support, Network Security, IT Infrastructure Management, Digital Marketing Pune, Cybaem Tech, IT Company in Pune, Managed IT Services Pune, Cybersecurity Services Pune, Cloud computing Services, IT AMC Services, Digital Marketing, Cloud Migration Services, IT Support Company Pune",
+  ogTitle: "Cybaem Tech | IT Services & Cybersecurity Solutions",
+  ogDescription: "Secure, scalable IT infrastructure, cybersecurity, cloud solutions and managed IT services for growing businesses.",
+  ogType: "website",
+  ogImageAlt: "Cybaem Tech logo",
+  twitterTitle: "Cybaem Tech | IT Services & Cybersecurity Solutions",
+  twitterDescription: "Secure, scalable IT infrastructure, cybersecurity, cloud solutions and managed IT services for growing businesses.",
+  twitterImageAlt: "Cybaem Tech logo",
   jsonLd: [
-    organizationSchema(),
-    {
-      ...professionalServiceSchema(),
-      priceRange: "$$",
-    },
-    websiteSchema,
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "@id": "https://cybaemtech.com/#webpage",
-      url: "https://cybaemtech.com/",
-      name: "IT Services Company in Pune | Cybaem Tech Pvt Ltd",
-      description: "Cybaem Tech provides managed IT services, software development, cyber security, IT support, website development, eCommerce development and digital marketing services.",
-      isPartOf: { "@id": "https://cybaemtech.com/#website" },
-      about: { "@id": "https://cybaemtech.com/#organization" },
-      primaryImageOfPage: { "@type": "ImageObject", url: "https://cybaemtech.com/assets/cybaem-logo-C5lgmAgK.png" },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://cybaemtech.com/#services",
-      name: "IT and Digital Services",
-      provider: { "@id": "https://cybaemtech.com/#organization" },
-      areaServed: [
-        { "@type": "Country", name: "India" },
-        { "@type": "City", name: "Pune" },
-        { "@type": "City", name: "Mumbai" },
-        { "@type": "City", name: "Bangalore" },
-        { "@type": "City", name: "Hyderabad" },
-        { "@type": "City", name: "Delhi" },
-      ],
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Cybaem Tech Services",
-        itemListElement: [
-          "Managed IT Services", "Software Development Services", "IT Staff Augmentation",
-          "Cyber Security Services", "Remote IT Support", "IT Support Services",
-          "Website Development", "Custom Website Development", "eCommerce Development",
-          "Digital Marketing Services",
-        ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
+      "@type": "Organization",
+      "name": "Cybaem Tech",
+      "url": "https://www.cybaemtech.com",
+      "logo": "https://www.cybaemtech.com/logo.png",
+      "description": "IT Services, Cybersecurity, Cloud Solutions, Managed IT Support and Digital Marketing Company in Pune.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
       },
-    },
+      "telephone": "+91-9028541383"
+    }
   ] as Record<string, unknown>[],
 };

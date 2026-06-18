@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
+import { useBlogData } from "@/hooks/useBlogData";
 
 interface BlogPostData {
   id: string;
@@ -23,90 +24,68 @@ interface BlogPostData {
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { posts, loading: postsLoading, error } = useBlogData();
   const [post, setPost] = useState<BlogPostData | null>(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
 
-  /*useEffect(() => {
-    const fetchPost = async () => {
-      if (!slug) return;
-
-      try {
-        const { data, error } = await (await import("@/integrations/supabase/client")).supabase
-          .from("blog_posts")
-          .select("*")
-          .eq("slug", slug)
-          .eq("published", true)
-          .maybeSingle();
-        if (!error && data) {
-          setPost(data as BlogPostData);
-        } else {
-          setNotFound(true);
-        }
-      } catch {
-        setNotFound(true);
-      }
-      setLoading(false);
-    };
-
-    fetchPost();
-  }, [slug]);*/
-
-
   useEffect(() => {
-  const fetchPost = async () => {
-    if (!slug) return;
+    // Still loading data from Google Sheets - show loading skeleton
+    if (postsLoading) {
+      setLoading(true);
+      return;
+    }
+
+    // If slug is missing, show not found
+    if (!slug) {
+      setNotFound(true);
+      setLoading(false);
+      return;
+    }
 
     try {
-      const response = await fetch(
-        "https://opensheet.elk.sh/1fI_YaQF9y53wjRBKwi_T7SGCTqkz_1gLDvWbA1zp8P4/Sheet1"
-      );
-
-      const data = await response.json();
-
       const index = parseInt(slug.replace("linkedin-post-", ""));
 
-      const filteredPosts = data.filter(
-        (row: any) => row.Blog === "YES"
-      );
+      // If index is invalid, show not found
+      if (isNaN(index)) {
+        setNotFound(true);
+        setLoading(false);
+        return;
+      }
 
-      const row = filteredPosts[index];
+      const row = posts[index];
 
       if (!row) {
+        console.warn(`[BlogPost] Post not found at index ${index}. Available posts: ${posts.length}`);
         setNotFound(true);
       } else {
+        console.log(`[BlogPost] Loaded post: ${row.title}`);
         setPost({
-  id: row["Post ID"],
-  title: row["Title"] || row["Post Text"]?.substring(0, 70) + "...",
-  slug,
-  excerpt: row["Post Text"]?.substring(0, 180),
-
-  content: row["Post Text"]
-  ?.replace(/\{hashtag\|\\#\|([^}]+)\}/g, "#$1")
-  ?.replace(/\n/g, "<br/><br/>")
-  ?.trim(),
-
-  cover_image: row["Image URL"] || null,
-
-  author: "Cybaem Tech",
-
-  category: row["Category"] || "LinkedIn",
-
-  tags: [],
-
-  published_at: row["Published Date"],
-});
+          id: row.id,
+          title: row.title,
+          slug,
+          excerpt: row.excerpt,
+          content: row.excerpt
+            ? row.excerpt
+                .replace(/\{hashtag\|\\\#\|([^}]+)\}/g, "#$1")
+                .replace(/\n/g, "<br/><br/>")
+                .trim()
+            : "",
+          cover_image: row.cover_image,
+          author: row.author,
+          category: row.category,
+          tags: [],
+          published_at: row.published_at,
+        });
+        setNotFound(false);
       }
     } catch (error) {
-      console.error(error);
+      console.error("[BlogPost] Error parsing slug:", error);
       setNotFound(true);
     }
 
     setLoading(false);
-  };
-
-  fetchPost();
-}, [slug]);
+  }, [slug, posts, postsLoading]);
 
   const formatDate = (dateString: string | null) => {
     if (!dateString) return "";

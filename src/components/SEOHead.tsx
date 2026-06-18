@@ -64,8 +64,8 @@ const SEOHead = ({
     // Geo meta
     setMeta("name", "geo.region", "IN-MH");
     setMeta("name", "geo.placename", "Pune");
-    setMeta("name", "geo.position", "18.5912;73.7389");
-    setMeta("name", "ICBM", "18.5912,73.7389");
+    setMeta("name", "geo.position", "18.5204;73.8567");
+    setMeta("name", "ICBM", "18.5204,73.8567");
 
     // Open Graph
     setMeta("property", "og:type", ogType);

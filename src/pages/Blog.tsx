@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Calendar, ArrowRight, User, Mail } from "lucide-react";
@@ -11,77 +10,11 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { useBlogData } from "@/hooks/useBlogData";
 import { z } from "zod";
 
-console.log("BLOG FILE VERSION 777");
-
-interface BlogPost {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string | null;
-  cover_image: string | null;
-  author: string;
-  category: string | null;
-  published_at: string | null;
-}
-
 const Blog = () => {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  //useEffect(() => {
-    //const fetchPosts = async () => {
-     // try {
-      //const { data } = await (await import("@/integrations/supabase/client")).supabase
-         // .from("blog_posts")
-         // .select("id, title, slug, excerpt, cover_image, author, category, published_at")
-          //.eq("published", true)
-          //.order("published_at", { ascending: false });
-        //if (data) setPosts(data);
-      //} catch {
-        // silent fail
-      //}
-      //setLoading(false);
-    //};
-
-    //fetchPosts();
-  //}, []);
-
-
-useEffect(() => {
-  const fetchPosts = async () => {
-    try {
-      const response = await fetch(
-        "https://opensheet.elk.sh/1fI_YaQF9y53wjRBKwi_T7SGCTqkz_1gLDvWbA1zp8P4/Sheet1"
-      );
-
-      const data = await response.json();
-
-      const filteredPosts = data
-        .filter((row: any) => row.Blog === "YES")
-        .map((row: any, index: number) => ({
-          id: row["Post ID"] || String(index),
-          title: row["Post Text"]?.substring(0, 70) + "...",
-          slug: `linkedin-post-${index}`,
-          excerpt: row["Post Text"]?.substring(0, 180),
-          cover_image: row["Image URL"] || null,
-          author: "Cybaem Tech",
-          category: "LinkedIn",
-          published_at: row["Published Date"],
-        }));
-
-      setPosts(filteredPosts);
-      console.log("BLOG DATA:", filteredPosts);
-    } catch (error) {
-      console.error(error);
-    }
-
-    setLoading(false);
-  };
-
-  fetchPosts();
-}, []);
+  const { posts, loading, error } = useBlogData();
 
   const formatDate = (dateString: string | null) => {
     if (!dateString) return "";
@@ -153,6 +86,23 @@ useEffect(() => {
                     <Skeleton className="h-4 w-3/4" />
                   </div>
                 ))}
+              </div>
+            ) : error && posts.length === 0 ? (
+              <div className="text-center py-20">
+                <div className="max-w-md mx-auto">
+                  <p className="text-muted-foreground text-lg mb-4 font-medium">
+                    Unable to Load Blog Posts
+                  </p>
+                  <p className="text-muted-foreground mb-6 text-sm">
+                    {error}
+                  </p>
+                  <button
+                    onClick={() => window.location.reload()}
+                    className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors"
+                  >
+                    Refresh Page
+                  </button>
+                </div>
               </div>
             ) : posts.length === 0 ? (
               <div className="text-center py-20">

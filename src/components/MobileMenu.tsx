@@ -3,18 +3,13 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ChevronDown, Home } from "lucide-react";
 import { motion } from "framer-motion";
 
-const solutionsLinks = [
-  { title: "Enterprise Software", slug: "enterprise-software" },
-  { title: "Web Systems", slug: "web-systems" },
-  { title: "IT Augmentation", slug: "it-staff-augmentation" },
-  { title: "Managed IT & Security", slug: "managed-it" },
-  { title: "Digital Growth", slug: "digital-revenue-growth" },
-];
+import { solutionsColumns } from "./Navbar";
 
 const navLinks = [
   { label: "Portfolio", href: "/portfolio" },
   { label: "About Us", href: "/about" },
   { label: "Life At CybaemTech", href: "/life-at-cybaemtech" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -133,20 +128,30 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             <div
               className="overflow-hidden transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
               style={{
-                maxHeight: solutionsExpanded ? "400px" : "0px",
+                maxHeight: solutionsExpanded ? "800px" : "0px",
                 opacity: solutionsExpanded ? 1 : 0,
               }}
             >
-              <div className="py-2 pl-4 space-y-1">
-                {solutionsLinks.map((sol) => (
-                  <Link
-                    key={sol.slug}
-                    to={`/solutions/${sol.slug}`}
-                    onClick={onClose}
-                    className="block py-2.5 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {sol.title}
-                  </Link>
+              <div className="py-2 pl-4 space-y-5">
+                {solutionsColumns.map((col) => (
+                  <div key={col.label}>
+                    <span className="text-xs font-medium tracking-[0.1em] uppercase text-muted-foreground/60 mb-2 block">
+                      {col.label}
+                    </span>
+                    <div className="space-y-1">
+                      {col.items.map((it) => (
+                        <Link
+                          key={it.title}
+                          to={`/solutions/${it.slug}`}
+                          onClick={onClose}
+                          className="flex items-center gap-2 py-2.5 text-sm text-foreground/80 hover:text-primary transition-colors"
+                        >
+                          <it.icon size={15} className="text-muted-foreground shrink-0" />
+                          <span>{it.title}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>

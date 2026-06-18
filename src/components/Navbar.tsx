@@ -16,7 +16,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import cybaemLogo from "@/assets/cybaem-logo.png";
 import MobileMenu, { AnimatedHamburger } from "./MobileMenu";
 
-const solutionsColumns = [
+export const solutionsColumns = [
   {
     label: "CLOUD & SECURITY",
     items: [
